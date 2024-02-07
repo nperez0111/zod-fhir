@@ -1,0 +1,93 @@
+{
+  "name": "zod-fhir",
+  "version": "1.0.0",
+  "description": "Use Zod to validate FHIR resources",
+  "bugs": {
+    "url": "https://github.com/nperez0111/zod-fhir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nperez0111/zod-fhir"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Nick the Sick",
+    "email": "nick@nickthesick.com",
+    "url": "https://nickthesick.com"
+  },
+  "contributors": [
+    {
+      "name": "Nick Perez",
+      "email": "nick@nickthesick.com",
+      "url": "https://nickthesick.com"
+    }
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./fhir-r2": {
+      "types": "./dist/fhir-r2/index.d.ts",
+      "require": "./dist/fhir-r2/index.cjs",
+      "import": "./dist/fhir-r2/index.js"
+    },
+    "./fhir-r3": {
+      "types": "./dist/fhir-r3/index.d.ts",
+      "require": "./dist/fhir-r3/index.cjs",
+      "import": "./dist/fhir-r3/index.js"
+    },
+    "./fhir-r4": {
+      "types": "./dist/fhir-r4/index.d.ts",
+      "require": "./dist/fhir-r4/index.cjs",
+      "import": "./dist/fhir-r4/index.js"
+    },
+    "./fhir-r4b": {
+      "types": "./dist/fhir-r4b/index.d.ts",
+      "require": "./dist/fhir-r4b/index.cjs",
+      "import": "./dist/fhir-r4b/index.js"
+    },
+    "./fhir-r5": {
+      "types": "./dist/fhir-r5/index.d.ts",
+      "require": "./dist/fhir-r5/index.cjs",
+      "import": "./dist/fhir-r5/index.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.md",
+    "docs"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf lib/generated && ts-to-zod -a",
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "zod",
+    "fhir",
+    "validation",
+    "schema",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "zod": "3"
+  },
+  "devDependencies": {
+    "@swc/core": "1.4.0",
+    "@types/fhir": "0.0.41",
+    "prettier": "3.2.5",
+    "ts-to-zod": "3.7.0",
+    "tsup": "8.0.1",
+    "typescript": "5.3.3",
+    "zod": "3.21.4"
+  },
+  "dependencies": {
+    "zod": "3"
+  }
+}
